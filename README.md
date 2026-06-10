@@ -12,7 +12,7 @@ Local Streamlit app for safely querying and modifying DuckDB databases.
 ## Install
 
 ```bash
-cd "C:/Users/field/OneDrive/Gecko/Repositories/duckdb-admin-ui"
+cd "duckdb-admin-ui"
 python -m pip install -e ".[dev]"
 ```
 
@@ -57,3 +57,4 @@ You can override this in the sidebar.
 ```bash
 pytest -q
 ```
+
