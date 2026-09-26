@@ -12,7 +12,8 @@ Local Streamlit app for safely querying and modifying DuckDB databases.
 ## Install
 
 ```bash
-cd "duckdb-admin-ui"
+git clone https://github.com/fieldjw96/duckdb-admin-ui.git
+cd duckdb-admin-ui
 python -m pip install -e ".[dev]"
 ```
 
@@ -27,12 +28,15 @@ Then open the local URL shown by Streamlit.
 
 ## Default DB path
 
-The app defaults to:
+The app opens `data.duckdb` in the directory you run it from. To start on a different file,
+set `DUCKDB_PATH`:
 
-- `WORK_DIR/solera.duckdb` when `WORK_DIR` is set
-- otherwise: `%TEMP%/gecko/solera.duckdb`
+```bash
+DUCKDB_PATH=/path/to/your.duckdb streamlit run app.py
+```
 
-You can override this in the sidebar.
+You can also change the path in the sidebar at any time. If the file does not exist, DuckDB
+creates it on first use.
 
 ## Safety model
 
