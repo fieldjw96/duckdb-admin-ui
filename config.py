@@ -1,10 +1,9 @@
 from __future__ import annotations
 
 import os
-import tempfile
 from pathlib import Path
 
 
 def default_db_path() -> Path:
-    work_dir = Path(os.environ.get("WORK_DIR", "C:/tmp/gecko"))
-    return work_dir / "solera.duckdb"
+    """The database the sidebar starts on: `DUCKDB_PATH` if set, else `data.duckdb` here."""
+    return Path(os.environ.get("DUCKDB_PATH", "data.duckdb"))
